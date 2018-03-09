@@ -8,8 +8,8 @@ public class Player extends GameObject {
 	public Player(int x, int y, String type) {
 		super(x, y, type);
 		
-		velX =5;
-		velY =5;
+		//velX =5;
+		//velY =5;
 	}
 
 	

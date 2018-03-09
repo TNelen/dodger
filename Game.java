@@ -22,8 +22,12 @@ public class Game extends Canvas implements Runnable {
 		new Window(WIDTH, HEIGHT, "dit is demo versie! ", this);
 		
 		handler = new Handler();
+		this.addKeyListener(new KeyInput(handler)); //dit is nodig voor de keyinput
 		
-		handler.addObject(new Player(100 ,100, "player"));
+		
+		handler.addObject(new Player(100 ,100, "player1"));
+		handler.addObject(new Player(500 ,500, "player2"));
+
 	}
 	
 	public synchronized void start() {
