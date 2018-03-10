@@ -18,7 +18,7 @@ public class Window extends Canvas{
 		frame.setMinimumSize(new Dimension(width, height));
 		
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);  //zorgt ervoor dat kruisje rechtsboven werkt
-		frame.setResizable(true);
+		frame.setResizable(false); //je kan scherm niet herschalen
 		frame.setLocationRelativeTo(null); //hierdoor opent window in midden van scherm
 		frame.add(game); 	//game in frame zetten
 		frame.setVisible(true);
