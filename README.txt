@@ -5,13 +5,14 @@ Werkend:
 - Player movement
 - window border
 - basic enemy
-
-TO DO:
 - collision()
 - HUD, health
-- game state
 - spawn
 - health box 
+
+TO DO:
+- game state
+- verschillende enemies
 
 OPMERKINGEN
 - tick() methode in player moet wel blijven staan om die vel in te stellen
@@ -21,4 +22,3 @@ UITBEREIDINGEN
 - muziek
 - boss mode
 - speler van kleur veranderen
-- verschillende soorten enemys
