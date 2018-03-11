@@ -3,10 +3,18 @@ package SoftwareProject.main;
 import java.awt.Graphics;
 import java.util.LinkedList;
 
+
 //update en render game objects
 
 public class Handler {
 	LinkedList<GameObject> object = new LinkedList<GameObject>();
+	Spawn spawn;
+	
+	public Handler() {
+		spawn = new Spawn(this);
+		
+	}
+	
 	
 	public void tick() {
 		for(int i=0; i< object.size(); i++) {
@@ -14,13 +22,16 @@ public class Handler {
 			
 			tempObject.tick();
 		}
+		spawn.tick();
 	}
+	
 	public void render(Graphics g) {
 		for(int i=0; i< object.size(); i++) {
 			GameObject tempObject = object.get(i);
 			
 			tempObject.render(g);
 		}
+		spawn.render(g);
 	}
 	
 	public void addObject(GameObject object) {
@@ -31,5 +42,8 @@ public class Handler {
 		this.object.remove(object);
 	}
 	
+	public LinkedList<GameObject> getObjects() {
+		return object;
+	}
 	
 }

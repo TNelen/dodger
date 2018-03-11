@@ -6,14 +6,21 @@ import java.awt.Rectangle;
 
 public class Enemy extends GameObject {
 	
-	private Handler handler;
 	
-	public Enemy(int x, int y, String type, Handler handler) {
+	
+	public Enemy(int x, int y, String type) {
 		super(x, y , type);
-		this.handler = handler;
+		
 		
 		velX = 5;
 		velY = 5;
+	}
+	
+	public Enemy(int x, int y, int velX, int velY, String type) {
+		super(x, y , type);
+		
+		this.velX = velX;
+		this.velY = velY;
 	}
 	
 	public void tick() {
