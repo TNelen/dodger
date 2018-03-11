@@ -27,11 +27,11 @@ public class KeyInput extends KeyAdapter{
 	public void keyPressed(KeyEvent e){
 		int key = e.getKeyCode();
 		
-		for(int i=0; i<handler.players.size(); i++) {
-			GameObject tempObject = handler.players.get(i); //loop door alle objecten
+		for(int i=0; i<handler.object.size(); i++) {
+			GameObject tempObject = handler.object.get(i); //loop door alle objecten
 					if (tempObject.getType().equals("player1")) {
 				// key events player 1
-			System.out.println("beweging player1");
+			//System.out.println("beweging player1");
 				if(key == KeyEvent.VK_Z) { tempObject.setVelY(-5);			keyDown[0] = true; }
 				if(key == KeyEvent.VK_S) { tempObject.setVelY(5);			keyDown[1] = true; }
 				if(key == KeyEvent.VK_Q) { tempObject.setVelX(-5);			keyDown[2] = true; }
@@ -41,7 +41,7 @@ public class KeyInput extends KeyAdapter{
 			} 
 			if(tempObject.getType().equals("player2")) {
 				// key events player 2
-			System.out.println("beweging player2");
+			//System.out.println("beweging player2");
 				if(key == KeyEvent.VK_UP)	{tempObject.setVelY(-5);	  	keyDown[4] = true; }
 				if(key == KeyEvent.VK_DOWN) {tempObject.setVelY(5);			keyDown[5] = true; }
 				if(key == KeyEvent.VK_LEFT) {tempObject.setVelX(-5);		keyDown[6] = true; }
@@ -58,8 +58,8 @@ public class KeyInput extends KeyAdapter{
 		int key = e.getKeyCode();
 
 			
-			for(int i=0; i<handler.players.size(); i++) {
-				GameObject tempObject = handler.players.get(i); //loop door alle objecten
+			for(int i=0; i<handler.object.size(); i++) {
+				GameObject tempObject = handler.object.get(i); //loop door alle objecten
 			
 				if (tempObject.getType().equals("player1")) {
 					// key events player 1

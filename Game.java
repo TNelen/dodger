@@ -16,7 +16,8 @@ public class Game extends Canvas implements Runnable {
 	private boolean running = false;
 	
 	private Handler handler;
-	private Random r = new Random();
+	private Spawn spawn;
+	private Random r;
 	
 	public Game() {
 		new Window(WIDTH, HEIGHT, "dit is demo versie! ", this);
@@ -25,9 +26,6 @@ public class Game extends Canvas implements Runnable {
 		this.addKeyListener(new KeyInput(handler)); //dit is nodig voor de keyinput
 		
 		
-		handler.addObject(new Player(100 ,100, "player1", handler, 100, 10));
-		handler.addObject(new Player(500 ,500, "player2", handler, 100, 500));
-		handler.addObject(new Enemy(10, 10, "Enemy", handler));
 
 	}
 	
