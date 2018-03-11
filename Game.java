@@ -9,21 +9,26 @@ import java.util.Random;
 public class Game extends Canvas implements Runnable {
 	
 	private static final long serialVersionUID = 8867199718729913515L;
-	public static final int WIDTH = 1920, HEIGHT = 1080;
+	public static final int WIDTH = 1440, HEIGHT = 810;
 
 	// dit is de main class
 	private Thread thread;
 	private boolean running = false;
 	
 	private Handler handler;
-	private Random r;
+	private Random r = new Random();
 	
 	public Game() {
 		new Window(WIDTH, HEIGHT, "dit is demo versie! ", this);
 		
 		handler = new Handler();
+		this.addKeyListener(new KeyInput(handler)); //dit is nodig voor de keyinput
 		
-		handler.addObject(new Player(100 ,100, "player"));
+		
+		handler.addObject(new Player(100 ,100, "player1", handler, 100, 10));
+		handler.addObject(new Player(500 ,500, "player2", handler, 100, 500));
+		handler.addObject(new Enemy(10, 10, "Enemy", handler));
+
 	}
 	
 	public synchronized void start() {
@@ -41,6 +46,8 @@ public class Game extends Canvas implements Runnable {
 	}
 	
 	public void run() { 
+		this.requestFocus();   //hierdoor kan je gelijk besturen en moet je niet eerst klikken in het window
+		
 		// inspiratie :https://stackoverflow.com/questions/27628844/better-game-loop-engine
 		/* checks whether enough time has passed (1/60 sec) to refresh the game, 
 		 and checks whether enough time has passed (1 sec) to refresh the FPS counter;
@@ -90,6 +97,15 @@ public class Game extends Canvas implements Runnable {
 		
 		g.dispose();
 		bs.show();
+	}
+	public static int border(int var, int min , int max) { //hierdoor kan speler niet buiten grenzen van window bewegen
+		if(var>= max)
+			return var = max;
+		else if (var<= min)
+			return var = min;
+		else
+			return var;
+		
 	}
 	
 	public static void main(String args[]) {
