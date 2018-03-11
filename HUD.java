@@ -20,6 +20,8 @@ public class HUD {
 
 
 	public void render(Graphics g) {
+		g.setColor(Color.white);
+		g.fillRect(x-3, y-3, 206, 26);
 		g.setColor(Color.green);
 		g.fillRect(x, y, health*2, 20);
 		g.setColor(Color.white);

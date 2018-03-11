@@ -3,23 +3,39 @@ package SoftwareProject.main;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Rectangle;
+import java.util.Random;
 
 public class Enemy extends GameObject {
 	
 	
 	
-	public Enemy(int x, int y, String type) {
-		super(x, y , type);
+	public Enemy() {
+		
+		super("Enemy");
+		Random r = new Random();
+		x=r.nextInt(1400)+10;
+		y=r.nextInt(650)+10;			//In deze constructor wordt een enemy op willekeurige plek, met willekeurige snelheid aangemaakt.
+		velX=r.nextInt(3)+5;
+		velY=r.nextInt(3)+5;
 		
 		
-		velX = 5;
-		velY = 5;
 	}
 	
-	public Enemy(int x, int y, int velX, int velY, String type) {
-		super(x, y , type);
+	
+	public Enemy(int vel) {
+		super("Enemy");
+		Random r = new Random();
+		x=r.nextInt(1400)+10;
+		y=r.nextInt(650)+10;
 		
-		this.velX = velX;
+		velX = vel;	//Deze constructor maakt een enemy waarvan de x en y velocity gegeven worden
+		velY = vel;
+	}
+	
+	public Enemy(int x, int y, int velX, int velY) {
+		super(x, y , "Enemy");
+		
+		this.velX = velX;			//Deze constructor kan gebruikt worden als op voorhand een vaste velocity geset moet worden, als ook de positie
 		this.velY = velY;
 	}
 	
@@ -32,7 +48,7 @@ public class Enemy extends GameObject {
 	
 	public void render(Graphics g) { 
 		g.setColor(Color.red);
-		g.fillRect(x,y,16,16);
+		g.fillRect(x,y,25,25);
 	}
 
 	

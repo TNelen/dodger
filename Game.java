@@ -8,6 +8,7 @@ import java.awt.Graphics;
 import java.awt.image.BufferStrategy;
 
 
+
 public class Game extends Canvas implements Runnable {
 	
 	private static final long serialVersionUID = 8867199718729913515L;
@@ -17,16 +18,33 @@ public class Game extends Canvas implements Runnable {
 	private Thread thread;
 	private boolean running = false;
 	
+	STATE gameState = STATE.Menu;
+	
 	private Handler handler;
 	
+	public enum STATE {
+		Menu,
+		Help,
+		Game,
+		End;
+	};
+	
 	public Game() {
-		new Window(WIDTH, HEIGHT, "dit is demo versie! ", this);
+		new Window(WIDTH, HEIGHT, "DODGER DEMO", this);
 		
 		handler = new Handler();
 		this.addKeyListener(new KeyInput(handler)); //dit is nodig voor de keyinput
 		
 		
 
+	}
+
+	public void setState(STATE s){
+		gameState = s;
+	}
+	
+	public STATE getState() {
+		return gameState;
 	}
 	
 	public synchronized void start() {
@@ -108,5 +126,9 @@ public class Game extends Canvas implements Runnable {
 	
 	public static void main(String args[]) throws Exception{
 		new Game();
+		/*String audioFilePath = "C:\\Users\\jacob\\eclipse-workspace\\SoftwareProject\\ES.wav";		//Zet hier het path naar de .wav muziek file
+        AudioPlayer player = new AudioPlayer();				
+        player.play(audioFilePath);*/
+		
 	}
 }

@@ -10,16 +10,17 @@ public class Player extends GameObject {
 	Handler handler;
 	int health;
 	int hudX;
+	Color col;
 	HUD hud;
 
 
-	public Player(int x, int y, String type, Handler handler, int health, int hudX) {
+	public Player(int x, int y, String type, Handler handler, int hudX, Color c) {
 		super(x, y, type);
 		this.handler = handler;
-		this.health = health;
 		this.hudX = hudX;
+		health=100;
 		hud = new HUD(hudX);
-
+		col = c;
 		
 		//velX =5;
 		//velY =5;
@@ -41,7 +42,7 @@ public class Player extends GameObject {
 
 	
 	public void render(Graphics g) {
-		g.setColor(Color.blue);
+		g.setColor(col);
 		g.fillRect(x, y, 32, 32);
 		updateHud(g);
 	}

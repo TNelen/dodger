@@ -24,14 +24,15 @@ public class Spawn{
 	private void checkSpawn() {
 		switch(score) {
 		
-		case 1: handler.addObject(new Player(100 ,100, "Player1", handler, 100, 200));
-				handler.addObject(new Player(500 ,500, "Player2", handler, 100, 1000));
+		case 1: handler.addObject(new Player(400 ,400, "Player1", handler, 200,Color.yellow));
+				handler.addObject(new Player(960 ,400, "Player2", handler, 1000,Color.CYAN));
+				//handler.addPlayer();
 				break;
-		case 100: handler.addObject(new Enemy(x.nextInt(1400)+10, y.nextInt(800)+10, "Enemy"));
+		case 100: handler.addObject(new Enemy());
 				break;
 				
-		case 300: handler.addObject(new Enemy(x.nextInt(1400)+10, y.nextInt(800)+10, "Enemy"));
-				  handler.addObject(new HealthBox(x.nextInt(1400)+10, y.nextInt(800)+10, "HealthBox"));
+		case 300: handler.addObject(new Enemy());
+				  handler.addObject(new HealthBox());
 				break;
 		default:
 				break;
@@ -40,6 +41,10 @@ public class Spawn{
 			
 		
 		}
+	}
+	
+	public int getScore() {
+		return score;
 	}
 	
 	public void render(Graphics g) {

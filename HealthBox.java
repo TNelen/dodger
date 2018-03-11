@@ -3,15 +3,16 @@ package SoftwareProject.main;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Rectangle;
-import java.util.Random;
 
 public class HealthBox extends GameObject {
 
-	Random r = new Random();
 	
-	public HealthBox(int x, int y, String type) {
-		super(x, y, type);
-		
+	public HealthBox() {
+		super("HealthBox");
+	}
+	
+	public HealthBox(int x, int y) {
+		super(x, y, "HealthBox");
 	}
 
 	@Override

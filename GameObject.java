@@ -2,6 +2,7 @@ package SoftwareProject.main;
 
 import java.awt.Graphics;
 import java.awt.Rectangle;
+import java.util.Random;
 
 // alle objects van de game in deze class
 public abstract class GameObject {
@@ -10,6 +11,13 @@ public abstract class GameObject {
 		protected int x, y;	
 		protected String type;
 		protected int velX, velY; //speed
+		
+		public GameObject(String type) {
+			Random r = new Random();
+			x=r.nextInt(1300)+10;
+			y=r.nextInt(650)+10;
+			this.type=type;
+		}
 		
 		public GameObject(int x, int y, String type){
 			this.x = x;
