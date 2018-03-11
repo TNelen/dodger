@@ -5,14 +5,17 @@ Werkend:
 - Player movement
 - window border
 - basic enemy
+- collision
+- spawn
+- HUD, health
 
 
 TO DO:
-- collision()
-- HUD, health
+
 - game state
-- spawn
 - health box 
+- "volgende" enemy
+- snellere enemy
 
 
 OPMERKINGEN
@@ -24,4 +27,3 @@ UITBREIDINGEN
 - muziek
 - boss mode
 - speler van kleur veranderen
-- verschillende soorten enemys
