@@ -1,29 +1,30 @@
 # dodger
-SoftwareProject Wouter &amp; Timo
+SoftwareProject Wouter en Timo
 
 Werkend:
 - Player movement
-- window border
-- basic enemy
-- collision
-- spawn
+- Window Border
+- Gewone Enemy 
+- Muziek
+- Spawn
+- Health box 
+- Collision (staat in Player)
 - HUD, health
-
 
 TO DO:
 
-- game state
-- health box 
-- "volgende" enemy
-- snellere enemy
-
+- Game states (menu, help, game, end)
+- Genoeg objecten doen spawnen voor een toffe game(in de Spawn-class)
+- Volgende enemy
 
 OPMERKINGEN
-- tick() methode in player moet wel blijven staan om die vel in te stellen
-
+- Afhankelijk van de constructor die gebruikt wordt bij het maken van een enemy, zijn de parameters willekeurig of niet.
+- De kleur kan als parameter doorgegeven worden bij het aanmaken van een player.
+- Om muziek af te spelen, uncomment de code vanonder in Game. Verander het path naar de .wav file die je wilt afspelen.
 
 UITBREIDINGEN
-- achtergrond kleur veranderen
-- muziek
-- boss mode
-- speler van kleur veranderen
+- Achtergrondkleur veranderen
+- Muziek
+- Boss mode
+- Speler van kleur veranderen
+- Verschillende soorten enemys

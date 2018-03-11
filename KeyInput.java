@@ -7,6 +7,7 @@ public class KeyInput extends KeyAdapter{
 
 	private Handler handler;
 	private boolean[] keyDown = new boolean[8];
+	private int v=5;
 	
 	
 	public KeyInput(Handler handler){
@@ -29,23 +30,23 @@ public class KeyInput extends KeyAdapter{
 		
 		for(int i=0; i<handler.object.size(); i++) {
 			GameObject tempObject = handler.object.get(i); //loop door alle objecten
-					if (tempObject.getType().equals("player1")) {
+					if (tempObject.getType().equals("Player1")) {
 				// key events player 1
 			//System.out.println("beweging player1");
-				if(key == KeyEvent.VK_Z) { tempObject.setVelY(-5);			keyDown[0] = true; }
-				if(key == KeyEvent.VK_S) { tempObject.setVelY(5);			keyDown[1] = true; }
-				if(key == KeyEvent.VK_Q) { tempObject.setVelX(-5);			keyDown[2] = true; }
-				if(key == KeyEvent.VK_D) { tempObject.setVelX(5);			keyDown[3] = true; }
+				if(key == KeyEvent.VK_Z) { tempObject.setVelY(-v);			keyDown[0] = true; }
+				if(key == KeyEvent.VK_S) { tempObject.setVelY(v);			keyDown[1] = true; }
+				if(key == KeyEvent.VK_Q) { tempObject.setVelX(-v);			keyDown[2] = true; }
+				if(key == KeyEvent.VK_D) { tempObject.setVelX(v);			keyDown[3] = true; }
 
 					
 			} 
-			if(tempObject.getType().equals("player2")) {
+			if(tempObject.getType().equals("Player2")) {
 				// key events player 2
 			//System.out.println("beweging player2");
-				if(key == KeyEvent.VK_UP)	{tempObject.setVelY(-5);	  	keyDown[4] = true; }
-				if(key == KeyEvent.VK_DOWN) {tempObject.setVelY(5);			keyDown[5] = true; }
-				if(key == KeyEvent.VK_LEFT) {tempObject.setVelX(-5);		keyDown[6] = true; }
-				if(key == KeyEvent.VK_RIGHT) {tempObject.setVelX(5); 		keyDown[7] = true; }
+				if(key == KeyEvent.VK_UP)	{tempObject.setVelY(-v);	  	keyDown[4] = true; }
+				if(key == KeyEvent.VK_DOWN) {tempObject.setVelY(v);			keyDown[5] = true; }
+				if(key == KeyEvent.VK_LEFT) {tempObject.setVelX(-v);		keyDown[6] = true; }
+				if(key == KeyEvent.VK_RIGHT) {tempObject.setVelX(v); 		keyDown[7] = true; }
 				
 				
 			} 
@@ -61,7 +62,7 @@ public class KeyInput extends KeyAdapter{
 			for(int i=0; i<handler.object.size(); i++) {
 				GameObject tempObject = handler.object.get(i); //loop door alle objecten
 			
-				if (tempObject.getType().equals("player1")) {
+				if (tempObject.getType().equals("Player1")) {
 					// key events player 1
 				
 					if(key == KeyEvent.VK_Z) 	keyDown[0] = false;	 
@@ -77,7 +78,7 @@ public class KeyInput extends KeyAdapter{
 
 						
 				} 
-				if(tempObject.getType().equals("player2")) {
+				if(tempObject.getType().equals("Player2")) {
 					// key events player 2S
 					
 					if(key == KeyEvent.VK_UP) 		keyDown[4] = false;		
