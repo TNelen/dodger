@@ -34,9 +34,12 @@ public class Spawn{
 		case 300: handler.addObject(new Enemy());
 				  handler.addObject(new HealthBox());
 				break;
+		case 350: handler.addObject(new VerticalEnemy(0, 10));
+				break;
+		case 5: handler.addObject(new FollowingEnemy(50, 50, "Following", handler, "Player1"));
+				handler.addObject(new FollowingEnemy(50, 50, "Following", handler, "Player2"));
 		default:
 				break;
-			
 			
 			
 		
