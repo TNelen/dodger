@@ -10,6 +10,8 @@ Werkend:
 - Health box 
 - Collision (staat in Player)
 - HUD, health
+- Following enemy
+- vertical enemy
 
 TO DO:
 
@@ -24,6 +26,7 @@ OPMERKINGEN
 
 UITBREIDINGEN
 - Achtergrondkleur veranderen
+- BOM : als je die aanraakt gaat hij af en verwijdert hij alle enemys in een bepaalde range
 - Muziek
 - Boss mode
 - Speler van kleur veranderen
