@@ -20,6 +20,7 @@ public class Spawn{
 		score++;
 		checkSpawn();
 	}
+	
 
 	private void checkSpawn() {
 		switch(score) {
@@ -38,6 +39,30 @@ public class Spawn{
 				break;
 		case 5: handler.addObject(new FollowingEnemy(50, 50, "Following", handler, "Player1"));
 				handler.addObject(new FollowingEnemy(50, 50, "Following", handler, "Player2"));
+				break;
+		case 818:
+				for(int i=0; i<handler.object.size(); i++) {
+					GameObject tempObject = handler.object.get(i); //loop door alle objecten
+							if (tempObject.getType().equals("Vertical")) {
+								handler.removeObject(tempObject);
+							}
+				}
+				break;
+		case 1000:
+				for(int i=0;i< 10 ; i++) {
+					handler.addObject(new Enemy(5,i*80,4,0, "EnemyLine"));
+				}
+				break;
+		case 1715:
+			for(int j=0; j<10 ; j++) {
+				for(int i=0; i<handler.object.size(); i++) {
+					GameObject tempObject = handler.object.get(i); //loop door alle objecten
+					if (tempObject.getType().equals("EnemyLine")) {
+						handler.removeObject(tempObject);
+							}
+				}
+			}
+				break;
 		default:
 				break;
 			

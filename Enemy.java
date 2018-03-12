@@ -32,8 +32,8 @@ public class Enemy extends GameObject {
 		velY = vel;
 	}
 	
-	public Enemy(int x, int y, int velX, int velY) {
-		super(x, y , "Enemy");
+	public Enemy(int x, int y, int velX, int velY, String type) {
+		super(x, y , type);
 		
 		this.velX = velX;			//Deze constructor kan gebruikt worden als op voorhand een vaste velocity geset moet worden, als ook de positie
 		this.velY = velY;

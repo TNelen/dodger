@@ -94,10 +94,10 @@ package SoftwareProject.main;
 	 
 	    }
 	 
-	    /*public static void main(String[] args) {
-	        String audioFilePath = "E:/Test/Audio.wav";
+	    /* public static void main(String[] args) {
+	        String audioFilePath = "C:\\Users\\User\\Desktop\\GameSoundtrack.wav";
 	        AudioPlayer player = new AudioPlayer();
 	        player.play(audioFilePath);
-	    }*/
+	    } */
 	 
 	}

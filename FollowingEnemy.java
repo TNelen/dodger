@@ -6,8 +6,9 @@ import java.awt.Rectangle;
 
 public class FollowingEnemy extends GameObject{
 		
-		private Handler handler;
+
 		private GameObject player;
+		private Handler handler;
 
 		public FollowingEnemy(int x, int y, String type, Handler handler, String link) {
 			//link = de naam van het type dat hij moet volgen
