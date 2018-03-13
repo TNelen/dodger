@@ -15,6 +15,9 @@ Werkend:
 - Blob Enemy
 - Healthboxes op willekeurige momenten
 
+AANPASSINGEN
+- HUD Layout en font (% in bar, ander lettertype, rode kleur toegevoegd))
+
 TO DO:
 - Game states (menu, help, game, end) !!!!
 
