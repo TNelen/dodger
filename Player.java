@@ -86,6 +86,9 @@ public class Player extends GameObject {
 						case "Blob":health -=2;
 							//System.out.println(type +" : Botsing Blob");
 							break;
+						case "EnemyLine":health -=2;
+						//System.out.println(type +" : Botsing EnemyLine");
+						break;
 				}
 			}
 		}

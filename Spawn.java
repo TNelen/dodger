@@ -66,6 +66,18 @@ public class Spawn{
 				removeAllType("EnemyLine");		//Werkt, maar waarom 10x? (ik zie ook dat 1x niet genoeg is, maar hoe komt da :)
 			}
 				break;
+		case 2500: 
+			for(int i=0;i< 20 ; i++) {
+				handler.addObject(new Enemy(i*80+25,5,0,4, "EnemyLine"));
+			}
+				break;
+				
+		case 2892: 
+			for(int j=0; j<20 ; j++) {
+				removeAllType("EnemyLine");		//Werkt, maar waarom 10x? (ik zie ook dat 1x niet genoeg is, maar hoe komt da :)
+			}
+			
+				break;
 		default:
 				break;
 			
