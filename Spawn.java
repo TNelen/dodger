@@ -84,10 +84,14 @@ public class Spawn{
 			
 		
 		}
-	}
+}
 	
 	public int getScore() {
 		return score;
+	}
+	
+	public void resetScore() {
+		score = 0;
 	}
 	
 	public void removeAllType(String type) {

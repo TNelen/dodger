@@ -18,9 +18,13 @@ public class Game extends Canvas implements Runnable {
 	private Thread thread;
 	private boolean running = false;
 	
-	STATE gameState = STATE.Menu;
+	STATE gameState = STATE.Game;
 	
 	private Handler handler;
+	private Menu startMenu, endMenu;
+	
+	
+    
 
 	
 	public enum STATE {
@@ -34,14 +38,20 @@ public class Game extends Canvas implements Runnable {
 		new Window(WIDTH, HEIGHT, "DODGER DEMO", this);
 		
 		handler = new Handler();
+		startMenu = new StartMenu(this,handler);
+		endMenu = new EndMenu(this,handler);
 		this.addKeyListener(new KeyInput(handler)); //dit is nodig voor de keyinput
-		
-		
+		this.addMouseListener(startMenu);
+		this.addMouseListener(endMenu);
+		//AudioPlayer player = new AudioPlayer();	
+		//player.play(audioFilePath);
+					
 
 	}
 
 	public void setState(STATE s){
 		gameState = s;
+		
 	}
 	
 	public STATE getState() {
@@ -98,7 +108,20 @@ public class Game extends Canvas implements Runnable {
 		 }
 	
 	private void tick() {
-		handler.tick();
+		
+		if(gameState==STATE.Menu) {
+			startMenu.tick();
+			System.out.println("Menu gepasseerd");
+			//setState(STATE.Game);
+			
+		}else if(gameState == STATE.Game) {
+			if(handler.tick()==true) {
+				setState(STATE.End);
+			}
+		}else if(gameState == STATE.End) {
+			endMenu.tick();
+		}
+				
 	}
 	private void render() {
 		BufferStrategy bs = this.getBufferStrategy();
@@ -108,9 +131,17 @@ public class Game extends Canvas implements Runnable {
 		}
 		
 		Graphics g= bs.getDrawGraphics();
-		g.setColor(Color.black);
+		g.setColor(Color.DARK_GRAY);
 		g.fillRect(0,0, WIDTH, HEIGHT);
-		handler.render(g);
+		
+		if(gameState==STATE.Menu) {
+			startMenu.render(g);
+		}else if(gameState==STATE.Game) {
+			handler.render(g);
+			System.out.println("rendered");
+		}else {
+			endMenu.render(g);
+		}
 		
 		g.dispose();
 		bs.show();
@@ -126,11 +157,16 @@ public class Game extends Canvas implements Runnable {
 	}
 	
 	public static void main(String args[]) throws Exception{
+		
+		/*String audioFilePath = "C:\\Users\\jacob\\eclipse-workspace\\SoftwareProject\\ES.wav";
+		//String audioFilePath = "C:\\Users\\User\\Desktop\\GameSoundtrack.wav";		//Zet hier het path naar de .wav muziek file
+		AudioPlayer player = new AudioPlayer();	
+		player.setPath(audioFilePath);
+		player.start();*/
+		
 		new Game();
-		//String audioFilePath = "C:\\Users\\jacob\\eclipse-workspace\\SoftwareProject\\ES.wav";
-		String audioFilePath = "C:\\Users\\User\\Desktop\\GameSoundtrack.wav";		//Zet hier het path naar de .wav muziek file
-        AudioPlayer player = new AudioPlayer();				
-        player.play(audioFilePath);
+		
+		
 		
 	}
 }

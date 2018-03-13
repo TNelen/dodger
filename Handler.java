@@ -10,19 +10,24 @@ import java.util.LinkedList;
 public class Handler {
 	LinkedList<GameObject> object = new LinkedList<GameObject>();
 	Spawn spawn;
+	boolean gameOver=false;
 	
 	public Handler() {
 		spawn = new Spawn(this);
 		
 	}
 	
-	public void tick() {
+	public boolean tick() {
 		for(int i=0; i< object.size(); i++) {
 			GameObject tempObject = object.get(i);
 			
 			tempObject.tick();
 		}
 		spawn.tick();
+		
+		
+		return gameOver;
+		
 		/*if(spawn.getScore()==600) {
 			
 			removeEnemies();
@@ -59,6 +64,9 @@ public class Handler {
 		}
 	}*/
 	
+	public void setGameOver(boolean done) {
+		gameOver = done;
+	}
 	public LinkedList<GameObject> getObjects() {
 		return object;
 	}

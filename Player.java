@@ -36,6 +36,7 @@ public class Player extends GameObject {
 		collisionCheck();
 		if(health<=0) {
 			health = 0;
+			handler.setGameOver(true);
 			//Game over code nog aanvullen
 		}
 	}
@@ -86,9 +87,6 @@ public class Player extends GameObject {
 						case "Blob":health -=2;
 							//System.out.println(type +" : Botsing Blob");
 							break;
-						case "EnemyLine":health -=2;
-						//System.out.println(type +" : Botsing EnemyLine");
-						break;
 				}
 			}
 		}

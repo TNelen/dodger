@@ -15,9 +15,6 @@ Werkend:
 - Blob Enemy
 - Healthboxes op willekeurige momenten
 
-AANPASSINGEN
-- HUD Layout en font (% in bar, ander lettertype, rode kleur toegevoegd))
-
 TO DO:
 - Game states (menu, help, game, end) !!!!
 
@@ -29,10 +26,6 @@ OPMERKINGEN
 
 UITBREIDINGEN
 - Achtergrondkleur veranderen
-- special enemie (moelijke vijand) aankonidigen door uitroepteken met ne countdown
-- als ge pakt, de andere speler begint te flikkeren
-- hele kleine klokjes die damage doon tegen andere plater
-- skins ipv gewone kleuren voor players & enemies
 - in waves werken, na einde wave health bij krijgen?
 - BOM : als je die aanraakt gaat hij af en verwijdert hij alle enemys in een bepaalde range
 - Boss mode
