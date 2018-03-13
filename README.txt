@@ -26,6 +26,9 @@ OPMERKINGEN
 
 UITBREIDINGEN
 - Achtergrondkleur veranderen
+- als ge pakt, de andere speler begint te flikkeren
+- hele kleine klokjes die damage doon tegen andere plater
+- skins ipv gewone kleuren voor players & enemies
 - in waves werken, na einde wave health bij krijgen?
 - BOM : als je die aanraakt gaat hij af en verwijdert hij alle enemys in een bepaalde range
 - Boss mode
