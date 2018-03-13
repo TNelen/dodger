@@ -14,7 +14,7 @@ public abstract class GameObject {
 		
 		public GameObject(String type) {
 			Random r = new Random();
-			x=r.nextInt(1300)+10;
+			x=r.nextInt(1100)+10;
 			y=r.nextInt(650)+10;
 			this.type=type;
 		}

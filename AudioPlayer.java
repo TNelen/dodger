@@ -14,7 +14,7 @@ package SoftwareProject.main;
 	import javax.sound.sampled.LineUnavailableException;
 	import javax.sound.sampled.UnsupportedAudioFileException;
 	
-	public class AudioPlayer implements LineListener {
+	public class AudioPlayer extends Thread implements LineListener {
 	 
 	/**
 	 * This is an example program that demonstrates how to play back an audio file
@@ -22,7 +22,13 @@ package SoftwareProject.main;
 	 * @author www.codejava.net
 	 *
 	 */
+	     String filePath;
 	     
+	     public void setPath(String f) {
+	    	 filePath = f;
+	     }
+		
+		
 	    /**
 	     * this flag indicates whether the playback completes or not.
 	     */
@@ -93,11 +99,15 @@ package SoftwareProject.main;
 	        }
 	 
 	    }
+	    
+	    public void run() {
+	    	play(filePath);
+	    }
 	 
-	    /*public static void main(String[] args) {
-	        String audioFilePath = "E:/Test/Audio.wav";
+	    /* public static void main(String[] args) {
+	        String audioFilePath = "C:\\Users\\User\\Desktop\\GameSoundtrack.wav";
 	        AudioPlayer player = new AudioPlayer();
 	        player.play(audioFilePath);
-	    }*/
+	    } */
 	 
 	}
