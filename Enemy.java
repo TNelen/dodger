@@ -32,6 +32,8 @@ public class Enemy extends GameObject {
 		velY = vel;
 	}
 	
+	
+	
 	public Enemy(int x, int y, int velX, int velY, String type) {
 		super(x, y , type);
 		

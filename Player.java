@@ -67,7 +67,7 @@ public class Player extends GameObject {
 			if(getBounds().intersects(tempObject.getBounds())){
 				switch(tempObject.getType()) {
 						case "Enemy": health-=2;
-							System.out.println(type + " : Botsing");
+							//System.out.println(type + " : Botsing");
 							break;
 						case "HealthBox": 
 							if(health<81) {
@@ -78,10 +78,13 @@ public class Player extends GameObject {
 							handler.removeObject(tempObject);
 							break;
 						case "Vertical": health -=2;
-							System.out.println(type +" : Botsing VerticalEnemy");
+							//System.out.println(type +" : Botsing VerticalEnemy");
 							break;
 						case "Following": health -=2;
-							System.out.println(type +" : Botsing FollowingEnemy");
+							//System.out.println(type +" : Botsing FollowingEnemy");
+							break;
+						case "Blob":health -=2;
+							//System.out.println(type +" : Botsing Blob");
 							break;
 				}
 			}

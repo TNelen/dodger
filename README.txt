@@ -12,10 +12,11 @@ Werkend:
 - HUD, health
 - Following enemy
 - vertical enemy
+- Blob Enemy
+- Healthboxes op willekeurige momenten
 
 TO DO:
-- Game states (menu, help, game, end)
-- Genoeg objecten doen spawnen voor een toffe game(in de Spawn-class)
+- Game states (menu, help, game, end) !!!!
 
 OPMERKINGEN
 - Afhankelijk van de constructor die gebruikt wordt bij het maken van een enemy, zijn de parameters willekeurig of niet.

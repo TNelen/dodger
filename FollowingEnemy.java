@@ -8,13 +8,13 @@ public class FollowingEnemy extends GameObject{
 		
 
 		private GameObject player;
-		private Handler handler;
+		//private Handler handler;
 
 		public FollowingEnemy(int x, int y, String type, Handler handler, String link) {
 			//link = de naam van het type dat hij moet volgen
 			super(x, y, type);
 			
-			this.handler = handler;
+			//this.handler = handler;
 			
 			for(int i =0; i<handler.object.size(); i++) {
 				GameObject tempObject = handler.object.get(i);
