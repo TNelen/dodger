@@ -26,6 +26,7 @@ OPMERKINGEN
 
 UITBREIDINGEN
 - Achtergrondkleur veranderen
+- special enemie (moelijke vijand) aankonidigen door uitroepteken met ne countdown
 - als ge pakt, de andere speler begint te flikkeren
 - hele kleine klokjes die damage doon tegen andere plater
 - skins ipv gewone kleuren voor players & enemies
