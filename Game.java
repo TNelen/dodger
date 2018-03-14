@@ -18,7 +18,7 @@ public class Game extends Canvas implements Runnable {
 	private Thread thread;
 	private boolean running = false;
 	
-	STATE gameState = STATE.Game;
+	STATE gameState = STATE.Menu;
 	
 	private Handler handler;
 	private Menu startMenu, endMenu;
@@ -38,13 +38,17 @@ public class Game extends Canvas implements Runnable {
 		new Window(WIDTH, HEIGHT, "DODGER DEMO", this);
 		
 		handler = new Handler();
-		startMenu = new StartMenu(this,handler);
-		endMenu = new EndMenu(this,handler);
+		
 		this.addKeyListener(new KeyInput(handler)); //dit is nodig voor de keyinput
-		this.addMouseListener(startMenu);
-		this.addMouseListener(endMenu);
+		
+		
 		//AudioPlayer player = new AudioPlayer();	
 		//player.play(audioFilePath);
+		startMenu = new StartMenu(this,handler);
+		endMenu = new EndMenu(this,handler);
+		
+		this.addMouseListener(startMenu);
+		this.addMouseListener(endMenu);
 					
 
 	}
@@ -111,7 +115,6 @@ public class Game extends Canvas implements Runnable {
 		
 		if(gameState==STATE.Menu) {
 			startMenu.tick();
-			System.out.println("Menu gepasseerd");
 			//setState(STATE.Game);
 			
 		}else if(gameState == STATE.Game) {
@@ -138,8 +141,7 @@ public class Game extends Canvas implements Runnable {
 			startMenu.render(g);
 		}else if(gameState==STATE.Game) {
 			handler.render(g);
-			System.out.println("rendered");
-		}else {
+		}else if(gameState==STATE.End) {
 			endMenu.render(g);
 		}
 		
@@ -158,11 +160,11 @@ public class Game extends Canvas implements Runnable {
 	
 	public static void main(String args[]) throws Exception{
 		
-		/*String audioFilePath = "C:\\Users\\jacob\\eclipse-workspace\\SoftwareProject\\ES.wav";
+		String audioFilePath = "C:\\Users\\jacob\\eclipse-workspace\\SoftwareProject\\ES.wav";
 		//String audioFilePath = "C:\\Users\\User\\Desktop\\GameSoundtrack.wav";		//Zet hier het path naar de .wav muziek file
 		AudioPlayer player = new AudioPlayer();	
 		player.setPath(audioFilePath);
-		player.start();*/
+		player.start();
 		
 		new Game();
 		

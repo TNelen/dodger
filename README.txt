@@ -14,9 +14,13 @@ Werkend:
 - vertical enemy
 - Blob Enemy
 - Healthboxes op willekeurige momenten
+- Game states <3
 
 TO DO:
-- Game states (menu, help, game, end) !!!!
+- Exit-knop doen exitten
+- endMenu maken (zoals startMenu maar andere knop(pen), misschien een try again knop?)
+- GUI opfrissen
+- Genieten van het eindproduct
 
 OPMERKINGEN
 - Afhankelijk van de constructor die gebruikt wordt bij het maken van een enemy, zijn de parameters willekeurig of niet.
@@ -25,13 +29,12 @@ OPMERKINGEN
 - bij enemy bij 3e constructor type vedl toegevoeg zodat onderscheis is tussen enemies (zie EnemyLine spawn)
 
 UITBREIDINGEN
-- Achtergrondkleur veranderen
 - in waves werken, na einde wave health bij krijgen?
 - BOM : als je die aanraakt gaat hij af en verwijdert hij alle enemys in een bepaalde range
 - Boss mode
 - mijnenveld. Overal health boxes, die heel klein beetje health bij geven, en vermomde enemys (health boxes zonder kruis?), als je die raakt ga je half dood, en verwijnt de enemy?
 - Speler van kleur veranderen
-- HUD beetje doorzichtig maken als je onder deze gaat met een speler
+- HUD beetje doorzichtig maken als je onder deze gaat met een speler (wil ik wel doen! xxx wouter)
  - speedups (idem healthboxes) geven tijdelijk voor #ticks een speedup
  - enemy die groter wordt (in het midden van veld ofzo) (of 2 aan elke kant)
 
