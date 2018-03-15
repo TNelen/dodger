@@ -169,6 +169,8 @@ public class Spawn{
 		return score;
 	}
 	
+	
+	
 	public void resetScore() {
 		score = 0;
 	}

@@ -12,6 +12,7 @@ public class Handler {
 	Spawn spawn;
 	boolean gameOver=false;
 	String winner="";
+	int highScore;
 	
 	public Handler() {
 		spawn = new Spawn(this);
@@ -48,6 +49,13 @@ public class Handler {
 	
 	public String getWinner(){
 		return winner;
+	}
+	
+	public int getHighScore() {
+		if(spawn.getScore()>highScore) {
+			highScore = spawn.getScore();
+		}
+		return highScore;
 	}
 	
 	public void render(Graphics g) {

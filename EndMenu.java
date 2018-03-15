@@ -47,6 +47,7 @@ public class EndMenu extends Menu{
 		super.drawStringCenter(g, fnt5, "GAME OVER", Color.WHITE, Game.WIDTH/2, Game.HEIGHT/2);
 		super.drawStringCenter(g, fnt2, handler.getWinner()+" is the winner!", Color.WHITE, Game.WIDTH/2, Game.HEIGHT/2+60);
 		super.drawStringCenter(g, fnt2, "Final Score: "+handler.spawn.getScore(), Color.WHITE, Game.WIDTH/2, Game.HEIGHT/2+120);
+		super.drawStringCenter(g, fnt3, "High Score: "+handler.getHighScore(), Color.white, Game.WIDTH/2-500, (Game.HEIGHT/2)-180);
 		
 	}
 	

@@ -24,8 +24,8 @@ public class HealthBox extends GameObject {
 		g.setColor(Color.white);
 		g.fillRect(x,y,32,32);
 		g.setColor(Color.red);
-		g.fillRect(x+14,y,4,32);
-		g.fillRect(x,y+16,32,4);
+		g.fillRect(x+13,y,6,32);
+		g.fillRect(x,y+13,32,6);
 	}
 
 	public Rectangle getBounds() {
