@@ -25,7 +25,7 @@ public class StartMenu extends Menu {
 			if(mouseOver(mx,my,buttons.get(0).getRectVal()[0],buttons.get(0).getRectVal()[1],buttons.get(0).getRectVal()[2],buttons.get(0).getRectVal()[3])) {			//Op deze manier kan mouseOver toch gebruikt worden
 				game.setState(Game.STATE.Game);
 			}else if(mouseOver(mx,my,buttons.get(1).getRectVal()[0],buttons.get(1).getRectVal()[1],buttons.get(1).getRectVal()[2],buttons.get(1).getRectVal()[3])) {			//Op deze manier kan mouseOver toch gebruikt worden
-				game.setState(Game.STATE.End);
+				game.setState(Game.STATE.Help);
 			}
 			else if(mouseOver(mx,my,buttons.get(2).getRectVal()[0],buttons.get(2).getRectVal()[1],buttons.get(2).getRectVal()[2],buttons.get(2).getRectVal()[3])) {			//Op deze manier kan mouseOver toch gebruikt worden
 				//game.setState(Game.STATE.End);

@@ -19,6 +19,10 @@ public abstract class GameObject {
 			this.type=type;
 		}
 		
+		public void reset(){
+			
+		}
+		
 		public GameObject(int x, int y, String type){
 			this.x = x;
 			this.y = y;

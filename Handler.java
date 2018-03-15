@@ -11,6 +11,7 @@ public class Handler {
 	LinkedList<GameObject> object = new LinkedList<GameObject>();
 	Spawn spawn;
 	boolean gameOver=false;
+	String winner="";
 	
 	public Handler() {
 		spawn = new Spawn(this);
@@ -34,6 +35,21 @@ public class Handler {
 		}*/
 	}
 	
+	public void reset(){
+		winner="";
+		gameOver=false;
+		object.clear();
+		spawn = new Spawn(this);
+	}
+	
+	public void setWinner(String w){
+		winner = w;
+	}
+	
+	public String getWinner(){
+		return winner;
+	}
+	
 	public void render(Graphics g) {
 		for(int i=0; i< object.size(); i++) {
 			GameObject tempObject = object.get(i);
@@ -43,9 +59,6 @@ public class Handler {
 		spawn.render(g);
 	}
 	
-	public void addPlayer() {
-		this.object.add(new Player(400 ,400, "Player3", this, 200,Color.yellow));
-	}
 	
 	public void addObject(GameObject object) {
 		this.object.add(object);
@@ -70,5 +83,6 @@ public class Handler {
 	public LinkedList<GameObject> getObjects() {
 		return object;
 	}
+	
 	
 }

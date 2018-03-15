@@ -16,6 +16,7 @@ public class Menu extends MouseAdapter {
 	Font fnt2 = new Font(letterType,1,30);
 	Font fnt3 = new Font(letterType,1,20);
 	Font fnt4 = new Font(letterType,1,15);
+	Font fnt5 = new Font(letterType,1,80);
 	//private HUD hud;
 	
 	ArrayList<ClickButton> buttons;

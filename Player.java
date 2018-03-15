@@ -36,6 +36,11 @@ public class Player extends GameObject {
 		collisionCheck();
 		if(health<=0) {
 			health = 0;
+			if(type.equals("Player1")){
+				handler.setWinner("Player 2");
+			}else{
+				handler.setWinner("Player 1");
+			}
 			handler.setGameOver(true);
 			//Game over code nog aanvullen
 		}
@@ -55,6 +60,16 @@ public class Player extends GameObject {
 	public void setHealth(int hp) {
 		health = hp;
 		
+	}
+	
+	public void reset(){
+		
+		health=100;
+		if(type.equals("Player1")){
+			x=400;y=400;
+		}else{
+			x=960;y=400;
+		}
 	}
 	
 	public int getHealth() {
@@ -87,6 +102,15 @@ public class Player extends GameObject {
 						case "Blob":health -=2;
 							//System.out.println(type +" : Botsing Blob");
 							break;
+						case "EnemyLine":health -=2;
+							//System.out.println(type +" : Botsing enemyLine");
+						break;
+						case "EnemyLine1":health -=2;
+							//System.out.println(type +" : Botsing enemyLine");
+						break;
+						case "EnemyLine2":health -=2;
+							//System.out.println(type +" : Botsing enemyLine");
+						break;
 				}
 			}
 		}

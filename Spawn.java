@@ -29,8 +29,79 @@ public class Spawn{
 		}
 		
 		switch(score) {
+	//WAVE 1
+		case 1:   	handler.addObject(new Player(400 ,400, "Player1", handler, 200,Color.cyan));
+				  	handler.addObject(new Player(960 ,400, "Player2", handler, 1000,Color.CYAN));
+				    break;
+		case 100:   handler.addObject(new Enemy());
+				    break;
+		case 200: 	handler.addObject(new Enemy());
+		   		  	break;
+		case 300: 	handler.addObject(new Enemy());
+				  	break;
+		case 600: 	removeAllType("Enemy");
+				  	removeAllType("Enemy"); //met 1 remove gaan maaar 2 van de 3 enemies weg
+				  	break;
+	//WAVE2
+		case 601:	handler.addObject(new BlobEnemy());	
+					handler.addObject(new BlobEnemy());	
+					handler.addObject(new BlobEnemy());	
+					handler.addObject(new FollowingEnemy(50, 50, "Following", handler, "Player1"));
+					handler.addObject(new FollowingEnemy(50, 50, "Following", handler, "Player2"));
+					break;
+		case 950: 	for(int i=0;i< 10 ; i++) {
+					handler.addObject(new Enemy(5,i*80,4,0, "EnemyLine"));
+					}
+				   	break;
+		case 1665: for(int j=0; j<10 ; j++) {
+					removeAllType("EnemyLine");		//Werkt, maar waarom 10x? (ik zie ook dat 1x niet genoeg is, maar hoe komt da :)
+					}
+					break;
+		case 1799: 	removeAllType("Blob");
+					removeAllType("Blob");
+	//WAVE3
+		case 1800:  handler.addObject(new Enemy(7));
+					handler.addObject(new Enemy(7));
+					handler.addObject(new Enemy(7));
+					break;
+		case 2000:  handler.addObject(new HealthBox());
+					handler.addObject(new HealthBox());
+					break;
 		
-		case 1: handler.addObject(new Player(400 ,400, "Player1", handler, 200,Color.yellow));
+		case 2300: 	for(int i=0;i< 10 ; i++) {
+					removeAllType("Enemy");
+		}
+					removeAllType("Following");
+					removeAllType("Following");
+		
+					break;
+	//WAVE4
+		case 2400:  for(int i=0;i< 20 ; i++) {
+					handler.addObject(new Enemy(i*80+25,5,0,4, "EnemyLine1"));
+					}
+					break;
+		case 2500:
+					for(int i=0;i< 10 ; i++) {
+					handler.addObject(new Enemy(5,i*80,4,0, "EnemyLine2"));
+					}
+					break;
+		case 2792: 	for(int j=0; j<20 ; j++) {
+					removeAllType("EnemyLine1");		//Werkt, maar waarom 10x? (ik zie ook dat 1x niet genoeg is, maar hoe komt da :)
+					}	
+		case 3215:
+					for(int i=0;i< 10 ; i++) {
+					removeAllType("EnemyLine2");
+					}
+					break;
+		case 3220: 	handler.addObject(new VerticalEnemy(0, 10));
+					break;
+		case 3688:   removeAllType("VerticalEnemy");
+					break;
+		
+					
+		
+		
+		/*case 1: handler.addObject(new Player(400 ,400, "Player1", handler, 200,Color.yellow));
 				handler.addObject(new Player(960 ,400, "Player2", handler, 1000,Color.CYAN));
 				//handler.addPlayer();
 				break;
@@ -77,7 +148,7 @@ public class Spawn{
 				removeAllType("EnemyLine");		//Werkt, maar waarom 10x? (ik zie ook dat 1x niet genoeg is, maar hoe komt da :)
 			}
 			
-				break;
+				break; */
 		default:
 				break;
 			
