@@ -51,12 +51,16 @@ public class Handler {
 	}
 	
 	public void render(Graphics g) {
+		g.setColor(Color.DARK_GRAY);					//Achtergrondkleur
+		g.fillRect(0,0, Game.WIDTH, Game.HEIGHT);	
+		
 		for(int i=0; i< object.size(); i++) {
 			GameObject tempObject = object.get(i);
 			
 			tempObject.render(g);
 		}
 		spawn.render(g);
+		
 	}
 	
 	

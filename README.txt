@@ -15,11 +15,12 @@ Werkend:
 - Blob Enemy
 - Healthboxes op willekeurige momenten
 - Game states <3
+- Menu's
 
 TO DO:
-- Exit-knop doen exitten
-- endMenu maken (zoals startMenu maar andere knop(pen), misschien een try again knop?)
 - GUI opfrissen
+- Enemies worden allemaal met zelfde velocities gemaakt. Hoe komt het dat dat niet random is, en how to fix?
+- Opties ingeklikt -> Back-> Nog eens opties indrukken werkt niet correct. Het effectieve klikvierkant van de knop past dan aan :/
 - Genieten van het eindproduct
 
 OPMERKINGEN

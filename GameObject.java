@@ -13,9 +13,9 @@ public abstract class GameObject {
 		protected int velX, velY; //speed
 		
 		public GameObject(String type) {
-			Random r = new Random();
-			x=r.nextInt(1100)+10;
-			y=r.nextInt(650)+10;
+			Random p = new Random();
+			x=p.nextInt(1100)+10;
+			y=p.nextInt(650)+10;
 			this.type=type;
 		}
 		

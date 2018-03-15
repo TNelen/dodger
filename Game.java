@@ -138,8 +138,10 @@ public class Game extends Canvas implements Runnable {
 		}
 		
 		Graphics g= bs.getDrawGraphics();
-		g.setColor(Color.DARK_GRAY);
-		g.fillRect(0,0, WIDTH, HEIGHT);
+		
+		g.setColor(Color.LIGHT_GRAY);
+		//g.setColor(Color.getHSBColor(56, 62, 94));			Kleur kiezen met een color picker
+		g.fillRect(0,0, WIDTH, HEIGHT);		//Standaard-Achtergrondkleur
 		
 		if(gameState==STATE.Menu) {
 			startMenu.render(g);
@@ -154,6 +156,7 @@ public class Game extends Canvas implements Runnable {
 		g.dispose();
 		bs.show();
 	}
+	
 	public static int border(int var, int min , int max) { //hierdoor kan speler niet buiten grenzen van window bewegen
 		if(var>= max)
 			return var = max;

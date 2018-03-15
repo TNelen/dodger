@@ -9,9 +9,9 @@ public class StartMenu extends Menu {
 
 	public StartMenu(Game game, Handler handler) {
 		super(game, handler);
-		buttons.add(new ClickButton(fnt2, "Play", Color.WHITE, Color.WHITE, Color.BLACK, 7, 250));
-		buttons.add(new ClickButton(fnt2, "Options", Color.WHITE, Color.WHITE, Color.BLACK, 7, 360));	//font, tekst, tekstkleur, randkleur,vulkleur,rand-dikte, y-coord
-		buttons.add(new ClickButton(fnt2, "Exit", Color.WHITE, Color.WHITE, Color.BLACK, 7, 470));
+		buttons.add(new ClickButton(fnt2, "Play", Color.WHITE, Color.WHITE, Color.BLACK, 7, 370));
+		buttons.add(new ClickButton(fnt2, "Options", Color.WHITE, Color.WHITE, Color.BLACK, 7, 480));	//font, tekst, tekstkleur, randkleur,vulkleur,rand-dikte, y-coord
+		buttons.add(new ClickButton(fnt2, "Exit", Color.WHITE, Color.WHITE, Color.BLACK, 7, 590));
 	}
 
 	//knop toevoegen => nieuwe buttons.add(new ClickButton....)
@@ -44,20 +44,20 @@ public class StartMenu extends Menu {
 	
 	
 	public void render(Graphics g) {
+		/*g.setColor(Color.DARK_GRAY);
+		g.fillRect(0,0, Game.WIDTH, Game.HEIGHT);		//Achtergrondkleur
+		*/
+		
 		for(int i=0;i<buttons.size();i++) {
 			buttons.get(i).draw(g);
 		}
 		
 		
-		super.drawStringCenter(g, fnt, "DODGER", Color.WHITE, 70);
-		super.drawStringCenter(g, fnt3, "A Game By Timo & Wouter", Color.WHITE, 100);
-		//super.drawStringCenter(g, fnt2, "Play", Color.WHITE, 190);
-		//super.drawStringCenter(g, fnt2, "Help", Color.WHITE, 290);
-		//super.drawStringCenter(g, fnt2, "Exit", Color.WHITE, 390);
-		/*super.drawStringButtonCenter(g, fnt2, "Play", Color.WHITE, Color.WHITE, Color.BLACK, 7, 250);
-		super.drawStringButtonCenter(g, fnt2, "Options", Color.WHITE, Color.WHITE, Color.BLACK, 7, 360);
-		super.drawStringButtonCenter(g, fnt2, "Exit", Color.WHITE, Color.WHITE, Color.BLACK, 7, 470);
-		*/
+		super.drawStringCenter(g, fnt, "DODGER", Color.BLACK, (Game.WIDTH/2)-5, 144);
+		super.drawStringCenter(g, fnt, "DODGER", Color.BLACK, (Game.WIDTH/2), 140);
+		super.drawStringCenter(g, fnt, "DODGER", Color.WHITE, Game.WIDTH/2, 140);
+		
+		super.drawStringCenter(g, fnt3, "A Game By Timo & Wouter", Color.BLACK, Game.WIDTH/2, 190);
 	}
 
 }

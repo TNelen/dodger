@@ -39,6 +39,14 @@ public class Spawn{
 		   		  	break;
 		case 300: 	handler.addObject(new Enemy());
 				  	break;
+		case 390:	handler.addObject(new Enemy());
+	  				break;
+		case 410:	handler.addObject(new Enemy());
+					break;
+		case 430:	handler.addObject(new Enemy());
+					break;
+		case 450:	handler.addObject(new Enemy());
+			break;
 		case 600: 	removeAllType("Enemy");
 				  	removeAllType("Enemy"); //met 1 remove gaan maaar 2 van de 3 enemies weg
 				  	break;

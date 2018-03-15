@@ -28,13 +28,16 @@ public class OptionsMenu extends Menu {
 	}
 	
 	public void render(Graphics g) {
+		/*g.setColor(Color.DARK_GRAY);				//Achtergrond
+		g.fillRect(0,0, WIDTH, HEIGHT);	
+		*/
 		for(int i=0;i<buttons.size();i++) {
 			buttons.get(i).draw(g);
 		}
 		
-		super.drawStringCenter(g, fnt, "OPTIES", Color.WHITE, Game.HEIGHT/2-100);
-		super.drawStringCenter(g, fnt3, " Bestuur speler 1 met zqsd ", Color.WHITE, Game.HEIGHT/2-40);
-		super.drawStringCenter(g, fnt3, " Bestuur speler 2 met pijltjes ", Color.WHITE, Game.HEIGHT/2);
+		super.drawStringCenter(g, fnt, "OPTIES", Color.WHITE, Game.WIDTH/2,Game.HEIGHT/2-100);
+		super.drawStringCenter(g, fnt3, " Bestuur speler 1 met zqsd ", Color.WHITE, Game.WIDTH/2, Game.HEIGHT/2-40);
+		super.drawStringCenter(g, fnt3, " Bestuur speler 2 met pijltjes ", Color.WHITE, Game.WIDTH/2, Game.HEIGHT/2);
 		
 	}
 	

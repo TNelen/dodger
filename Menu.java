@@ -46,10 +46,10 @@ public class Menu extends MouseAdapter {
 	public void tick() {
 	}
 	
-	public void drawStringCenter(Graphics g, Font f, String s, Color c, int y) {
+	public void drawStringCenter(Graphics g, Font f, String s, Color c, int x, int y) {
 		g.setFont(f);
 		g.setColor(c);
-		g.drawString(s, Game.WIDTH/2 - (g.getFontMetrics(f).stringWidth(s))/2, y);
+		g.drawString(s, x - (g.getFontMetrics(f).stringWidth(s))/2, y);
 	}
 	
 	/*public void drawStringButtonCenter(Graphics g, Font f, String s, Color tc, Color boc, Color buc, int thick, int y) {
