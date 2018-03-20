@@ -23,6 +23,10 @@ public class ClickButton {
 		this.thick=thick;
 		this.y=y;
 		
+		border = new Rectangle();
+		button = new Rectangle();
+		
+		
 		
 		
 	}
@@ -31,8 +35,10 @@ public class ClickButton {
 		int sWidth=g.getFontMetrics(f).stringWidth("PLAY");
 		int sHeight=((int) g.getFontMetrics(f).getLineMetrics("PLAY", g).getDescent() + (int) g.getFontMetrics(f).getLineMetrics("PLAY", g).getDescent())*2;
 		
-		border = new Rectangle(Game.WIDTH/2-(sWidth/2)-(40+thick),y+(20+thick),sWidth+(40+thick)*2, -sHeight - (20+thick)*2);
-		button = new Rectangle(Game.WIDTH/2-(sWidth/2)-40,y+20,sWidth+80, -sHeight - 40);
+		if(border.getX()==0.0) {
+			border = new Rectangle(Game.WIDTH/2-(sWidth/2)-(40+thick),y+(20+thick),sWidth+(40+thick)*2, -sHeight - (20+thick)*2);
+			button = new Rectangle(Game.WIDTH/2-(sWidth/2)-40,y+20,sWidth+80, -sHeight - 40);
+		}
 		
 		g.setColor(boc);
 		g.fillRect((int) border.getX(), (int) border.getY(), (int) border.getWidth(), (int) border.getHeight());
@@ -44,13 +50,17 @@ public class ClickButton {
 		g.drawString(s, Game.WIDTH/2 - (g.getFontMetrics(f).stringWidth(s))/2, y);
 	}
 	
+	
 	public int[] getRectVal() {
 		int[] values = new int[4];
 		values[0] = (int) border.getX();
 		values[1] = (int) border.getY();
 		values[2] = (int) border.getWidth();
 		values[3] = (int) border.getHeight();
-		
+		/*for(int i=0;i<4;i++) {
+		System.out.println(values[i]);
+		}
+		System.out.println();*/
 		return values;
 	}
 	

@@ -3,6 +3,7 @@ package SoftwareProject.main;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Rectangle;
+//import java.util.Random;
 
 public class VerticalEnemy extends GameObject {
 
@@ -11,8 +12,12 @@ public class VerticalEnemy extends GameObject {
 	public VerticalEnemy(int x, int y) {
 		super(x, y , "Vertical");
 		
-		velX = 2;
-		velY = 5;
+		//Random r= new Random();
+		//velX=(r.nextInt(2)+2)*(r.nextBoolean() ? -1 : 1);
+		//velY=(r.nextInt(2)+3)*(r.nextBoolean() ? -1 : 1);
+		
+		velX=2;
+		velY=5;
 	}
 	
 	public void tick() {

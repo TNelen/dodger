@@ -142,15 +142,18 @@ public class Game extends Canvas implements Runnable {
 		g.setColor(Color.LIGHT_GRAY);
 		//g.setColor(Color.getHSBColor(56, 62, 94));			Kleur kiezen met een color picker
 		g.fillRect(0,0, WIDTH, HEIGHT);		//Standaard-Achtergrondkleur
-		
-		if(gameState==STATE.Menu) {
-			startMenu.render(g);
-		}else if(gameState==STATE.Game) {
-			handler.render(g);
-		}else if(gameState==STATE.End) {
-			endMenu.render(g);
-		}else if(gameState==STATE.Help){
-			optionsMenu.render(g);
+		try {
+			if(gameState==STATE.Menu) {
+				startMenu.render(g);
+			}else if(gameState==STATE.Game) {
+				handler.render(g);
+			}else if(gameState==STATE.End) {
+				endMenu.render(g);
+			}else if(gameState==STATE.Help){
+				optionsMenu.render(g);
+			}
+		}catch(Exception m) {
+			System.out.println("Nullpointboot");
 		}
 		
 		g.dispose();

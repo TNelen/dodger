@@ -15,16 +15,18 @@ public class OptionsMenu extends Menu {
 	public void mousePressed(MouseEvent e){
 		int mx = e.getX();
 		int my = e.getY();
+		int[][] values = new int[4][10];
 		
-		try {
-			if(game.getState()==Game.STATE.Help) {
-				if(mouseOver(mx,my,buttons.get(0).getRectVal()[0],buttons.get(0).getRectVal()[1],buttons.get(0).getRectVal()[2],buttons.get(0).getRectVal()[3])) {			//Op deze manier kan mouseOver toch gebruikt worden
-					game.setState(Game.STATE.Menu);
-				}
-			}
-		}catch(Exception p) {
-			System.out.println("Fuck NullPointerExceptions");
+		for(int i=0;i<buttons.size();i++) {
+			values[i]=buttons.get(i).getRectVal();
 		}
+		
+		if(game.getState()==Game.STATE.Help) {
+			if(mouseOver(mx,my,values[0][0],values[0][1],values[0][2],values[0][3])) {			//Op deze manier kan mouseOver toch gebruikt worden
+				game.setState(Game.STATE.Menu);
+			}
+		}
+		
 	}
 	
 	public void render(Graphics g) {

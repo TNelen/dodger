@@ -32,7 +32,7 @@ public class Spawn{
 	//WAVE 1
 		case 1:   	handler.addObject(new Player(400 ,400, "Player1", handler, 200,Color.cyan));
 				  	handler.addObject(new Player(960 ,400, "Player2", handler, 1000,Color.CYAN));
-				    break;
+					break;
 		case 100:   handler.addObject(new Enemy());
 				    break;
 		case 200: 	handler.addObject(new Enemy());
@@ -72,7 +72,7 @@ public class Spawn{
 					handler.addObject(new Enemy(7));
 					handler.addObject(new Enemy(7));
 					break;
-		case 2000:  handler.addObject(new HealthBox());
+		case 2000:  //handler.addObject(new HealthBox());
 					handler.addObject(new HealthBox());
 					break;
 		
@@ -103,7 +103,7 @@ public class Spawn{
 					break;
 		case 3220: 	handler.addObject(new VerticalEnemy(0, 10));
 					break;
-		case 3688:   removeAllType("VerticalEnemy");
+		case 3688:   removeAllType("VerticalEnemy");			//Raakt dan net de kant
 					break;
 		
 					
