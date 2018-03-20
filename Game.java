@@ -22,7 +22,7 @@ public class Game extends Canvas implements Runnable {
 	
 	private Handler handler;
 	private Menu startMenu, endMenu,optionsMenu;
-	
+	static private AudioPlayer player;
 	
     
 
@@ -175,7 +175,7 @@ public class Game extends Canvas implements Runnable {
 		
 		/*String audioFilePath = "C:\\Users\\jacob\\eclipse-workspace\\SoftwareProject\\ES.wav";
 		//String audioFilePath = "C:\\Users\\User\\Desktop\\GameSoundtrack.wav";		//Zet hier het path naar de .wav muziek file
-		AudioPlayer player = new AudioPlayer();	
+		player = new AudioPlayer();	
 		player.setPath(audioFilePath);
 		player.start();*/
 		

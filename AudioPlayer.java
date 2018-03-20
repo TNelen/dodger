@@ -23,6 +23,7 @@ package SoftwareProject.main;
 	 *
 	 */
 	     String filePath;
+	     Clip audioClip;
 	     
 	     public void setPath(String f) {
 	    	 filePath = f;
@@ -103,6 +104,11 @@ package SoftwareProject.main;
 	    public void run() {
 	    	play(filePath);
 	    }
+	    
+	    /*public void stahp() {
+	    	audioClip.stop();
+	    	audioClip.close();
+	    }*/
 	 
 	    /* public static void main(String[] args) {
 	        String audioFilePath = "C:\\Users\\User\\Desktop\\GameSoundtrack.wav";
