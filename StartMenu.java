@@ -21,9 +21,11 @@ public class StartMenu extends Menu {
 		int my = e.getY();
 		int[][] values = new int[4][10];
 		
+		
 		for(int i=0;i<buttons.size();i++) {
 			values[i]=buttons.get(i).getRectVal();
 		}
+		
 		
 		if(game.getState()==Game.STATE.Menu) {
 			if(mouseOver(mx,my,values[0][0],values[0][1],values[0][2],values[0][3])) {			//Op deze manier kan mouseOver toch gebruikt worden
@@ -58,7 +60,11 @@ public class StartMenu extends Menu {
 		
 	}
 	
-	
+	public void reset() {
+		buttons.set(0,new ClickButton(fnt2, "Play", Color.WHITE, Color.WHITE, Color.BLACK, 7, 370));
+		buttons.set(1,new ClickButton(fnt2, "Options", Color.WHITE, Color.WHITE, Color.BLACK, 7, 480));	//font, tekst, tekstkleur, randkleur,vulkleur,rand-dikte, y-coord
+		buttons.set(2,new ClickButton(fnt2, "Exit", Color.WHITE, Color.WHITE, Color.BLACK, 7, 590));
+	}
 	
 	
 	public void render(Graphics g) {

@@ -17,6 +17,7 @@ public class OptionsMenu extends Menu {
 		int my = e.getY();
 		int[][] values = new int[4][10];
 		
+		
 		for(int i=0;i<buttons.size();i++) {
 			values[i]=buttons.get(i).getRectVal();
 		}
@@ -24,6 +25,7 @@ public class OptionsMenu extends Menu {
 		if(game.getState()==Game.STATE.Help) {
 			if(mouseOver(mx,my,values[0][0],values[0][1],values[0][2],values[0][3])) {			//Op deze manier kan mouseOver toch gebruikt worden
 				game.setState(Game.STATE.Menu);
+				buttons.remove(0);
 			}
 		}
 		
@@ -33,8 +35,12 @@ public class OptionsMenu extends Menu {
 		/*g.setColor(Color.DARK_GRAY);				//Achtergrond
 		g.fillRect(0,0, WIDTH, HEIGHT);	
 		*/
-		for(int i=0;i<buttons.size();i++) {
-			buttons.get(i).draw(g);
+		if(buttons.isEmpty()) {
+			buttons.add(new ClickButton(fnt2, "Back", Color.WHITE, Color.WHITE, Color.BLACK, 7, Game.HEIGHT/2+100));
+		}else {
+			for(int i=0;i<buttons.size();i++) {
+				buttons.get(i).draw(g);
+			}
 		}
 		
 		super.drawStringCenter(g, fnt, "OPTIES", Color.WHITE, Game.WIDTH/2,Game.HEIGHT/2-100);

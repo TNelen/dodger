@@ -151,6 +151,7 @@ public class Game extends Canvas implements Runnable {
 				endMenu.render(g);
 			}else if(gameState==STATE.Help){
 				optionsMenu.render(g);
+				
 			}
 		}catch(Exception m) {
 			System.out.println("Nullpointboot");
