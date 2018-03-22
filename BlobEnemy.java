@@ -12,8 +12,8 @@ public class BlobEnemy extends GameObject{
 	public BlobEnemy() {
 		super("Blob");
 		Random r = new Random();
-		velX=(r.nextInt(3)+2)*(r.nextBoolean() ? -1 : 1);
-		velY=(r.nextInt(2)+2)*(r.nextBoolean() ? -1 : 1);
+		velX=(r.nextInt(5)+3)*(r.nextBoolean() ? -1 : 1);
+		velY=(r.nextInt(4)+3)*(r.nextBoolean() ? -1 : 1);
 		
 		breedte=25;
 		lengte=25;

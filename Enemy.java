@@ -16,8 +16,8 @@ public class Enemy extends GameObject {
 		x=r.nextInt(1400)+10;
 		y=r.nextInt(650)+10;			//In deze constructor wordt een enemy op willekeurige plek, met willekeurige snelheid aangemaakt.
 		r = new Random();
-		velX=(r.nextInt(3)+5)*(r.nextBoolean() ? -1 : 1);
-		velY=(r.nextInt(3)+5)*(r.nextBoolean() ? -1 : 1);
+		velX=(r.nextInt(5)+3)*(r.nextBoolean() ? -1 : 1);
+		velY=(r.nextInt(5)+3)*(r.nextBoolean() ? -1 : 1);
 		
 		
 	}
