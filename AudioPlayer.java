@@ -26,7 +26,7 @@ package SoftwareProject.main;
 	     Clip audioClip;
 	     
 	     public void setPath(String f) {
-	    	 filePath = f;
+	    	 filePath = f;					//Af te spelen muziek
 	     }
 		
 		
@@ -40,7 +40,7 @@ package SoftwareProject.main;
 	     * Play a given audio file.
 	     * @param audioFilePath Path of the audio file.
 	     */
-	    void play(String audioFilePath) {
+	    void play(String audioFilePath) {						//Muziek afspelen
 	        File audioFile = new File(audioFilePath);
 	 
 	        try {
@@ -56,7 +56,7 @@ package SoftwareProject.main;
 	 
 	            audioClip.open(audioStream);
 	            
-	            audioClip.loop(LOOP_CONTINUOUSLY);
+	            audioClip.loop(LOOP_CONTINUOUSLY);					//Soundtrack wordt oneindig geloopt
 	             
 	            audioClip.start();
 	             
@@ -75,7 +75,7 @@ package SoftwareProject.main;
 	            System.out.println("The specified audio file is not supported.");
 	            ex.printStackTrace();
 	        } catch (LineUnavailableException ex) {
-	            System.out.println("Audio line for playing back is unavailable.");
+	            System.out.println("Audio line for playing back is unavailable.");			//Bij missende files etc.
 	            ex.printStackTrace();
 	        } catch (IOException ex) {
 	            System.out.println("Error playing the audio file.");
@@ -92,7 +92,7 @@ package SoftwareProject.main;
 	        LineEvent.Type type = event.getType();
 	         
 	        if (type == LineEvent.Type.START) {
-	            System.out.println("Playback started.");
+	            System.out.println("Playback started.");			
 	             
 	        } else if (type == LineEvent.Type.STOP) {
 	            playCompleted = true;
@@ -102,7 +102,7 @@ package SoftwareProject.main;
 	    }
 	    
 	    public void run() {
-	    	play(filePath);
+	    	play(filePath);			//Bij het opstarten van deze thread begint de soundtrack
 	    }
 	    
 	    /*public void stahp() {

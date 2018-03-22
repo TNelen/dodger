@@ -17,10 +17,10 @@ public class Window extends Canvas{
 		frame.setMaximumSize(new Dimension(width, height));
 		frame.setMinimumSize(new Dimension(width, height));
 		
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);  //zorgt ervoor dat kruisje rechtsboven werkt
-		frame.setResizable(false); //je kan scherm niet herschalen
-		frame.setLocationRelativeTo(null); //hierdoor opent window in midden van scherm
-		frame.add(game); 	//game in frame zetten
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);  			//Zorgt ervoor dat kruisje rechtsboven werkt
+		frame.setResizable(false); 										//Je kan het scherm niet herschalen
+		frame.setLocationRelativeTo(null); 								//Hierdoor opent window in het midden van scherm
+		frame.add(game); 												//Zet de game in het frame
 		frame.setVisible(true);
 		game.start();	
 		

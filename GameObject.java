@@ -10,11 +10,11 @@ public abstract class GameObject {
 	
 		protected int x, y;	
 		protected String type;
-		protected int velX, velY; //speed
+		protected int velX, velY; 		//Speed
 		
 		public GameObject(String type) {
 			Random p = new Random();
-			x=p.nextInt(1100)+10;
+			x=p.nextInt(1100)+10;				//Objecten met deze constructor worden willekeurig geplaatst
 			y=p.nextInt(650)+10;
 			this.type=type;
 		}
@@ -25,12 +25,12 @@ public abstract class GameObject {
 		
 		public GameObject(int x, int y, String type){
 			this.x = x;
-			this.y = y;
+			this.y = y;							//Objecten met deze constructor worden op een bepaalde plek geplaatst
 			this.type = type;
 		}
 		
 		public abstract void tick();
-		public abstract void render(Graphics g);
+		public abstract void render(Graphics g);		//Iedere instance van GameObject heeft deze methods
 		public abstract Rectangle getBounds();
 		
 		public void setX(int x) {
@@ -47,7 +47,7 @@ public abstract class GameObject {
 		public int getY() {
 			return y;
 		}
-		public void setType(String type) {
+		public void setType(String type) {				//Get en Set de variabelen
 			this.type = type;
 		}
 		public String getType() {

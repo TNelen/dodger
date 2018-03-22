@@ -24,7 +24,7 @@ public class ClickButton {
 		this.y=y;
 		
 		border = new Rectangle();
-		button = new Rectangle();
+		button = new Rectangle();			//Vierkant van de knop en diens rand
 		
 		
 		
@@ -32,16 +32,17 @@ public class ClickButton {
 	}
 	
 	public void draw(Graphics g) {
-		int sWidth=g.getFontMetrics(f).stringWidth("PLAY");
+																			//De knoppen zijn gecentreerd en hebben een vaste grootte, gebaseerd op het meegegeven font.
+		int sWidth=g.getFontMetrics(f).stringWidth("PLAY");				
 		int sHeight=((int) g.getFontMetrics(f).getLineMetrics("PLAY", g).getDescent() + (int) g.getFontMetrics(f).getLineMetrics("PLAY", g).getDescent())*2;
 		
 		if(border.getX()==0.0) {
-			border = new Rectangle(Game.WIDTH/2-(sWidth/2)-(40+thick),y+(20+thick),sWidth+(40+thick)*2, -sHeight - (20+thick)*2);
+			border = new Rectangle(Game.WIDTH/2-(sWidth/2)-(40+thick),y+(20+thick),sWidth+(40+thick)*2, -sHeight - (20+thick)*2);		//Eenmalig opgeroepen bij de aanmaak van een nieuw menu
 			button = new Rectangle(Game.WIDTH/2-(sWidth/2)-40,y+20,sWidth+80, -sHeight - 40);
 		}
 		
 		g.setColor(boc);
-		g.fillRect((int) border.getX(), (int) border.getY(), (int) border.getWidth(), (int) border.getHeight());
+		g.fillRect((int) border.getX(), (int) border.getY(), (int) border.getWidth(), (int) border.getHeight());		//De vierkanten worden getekend op het scherm
 		g.setColor(buc);
 		g.fillRect((int) button.getX(), (int) button.getY(), (int) button.getWidth(), (int) button.getHeight());
 		
@@ -55,7 +56,7 @@ public class ClickButton {
 		int[] values = new int[4];
 		values[0] = (int) border.getX();
 		values[1] = (int) border.getY();
-		values[2] = (int) border.getWidth();
+		values[2] = (int) border.getWidth();		//Geeft waardes van de knop terug in handig arrayformaat
 		values[3] = (int) border.getHeight();
 		/*for(int i=0;i<4;i++) {
 		System.out.println(values[i]);
@@ -65,7 +66,7 @@ public class ClickButton {
 	}
 	
 	public String getStr() {
-		return s;
+		return s;				//Returnt de knoptekst
 	}
 
 }

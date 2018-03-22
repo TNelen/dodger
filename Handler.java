@@ -8,14 +8,15 @@ import java.util.LinkedList;
 //update en render game objects
 
 public class Handler {
-	LinkedList<GameObject> object = new LinkedList<GameObject>();
+	
+	LinkedList<GameObject> object = new LinkedList<GameObject>();		//Lijst met alle objecten
 	Spawn spawn;
 	boolean gameOver=false;
 	String winner="";
 	int highScore;
 	
 	public Handler() {
-		spawn = new Spawn(this);
+		spawn = new Spawn(this);						//Uit de spawn haalt de handler info over het tijdstip voor het aanmaken van nieuwe objecten
 		
 	}
 	
@@ -23,22 +24,19 @@ public class Handler {
 		for(int i=0; i< object.size(); i++) {
 			GameObject tempObject = object.get(i);
 			
-			tempObject.tick();
+			tempObject.tick();							//Laat alle objecten ticken
 		}
 		spawn.tick();
 		
 		
-		return gameOver;
+		return gameOver;								//Als een speler sterft, verandert deze de gameOver variabele in true. Deze wordt hier gereturned
 		
-		/*if(spawn.getScore()==600) {
-			
-			removeEnemies();
-		}*/
+		
 	}
 	
 	public void reset(){
 		winner="";
-		gameOver=false;
+		gameOver=false;									//Wanneer het spel opnieuw gespeeld wordt, zal alles gereset worden
 		object.clear();
 		spawn = new Spawn(this);
 	}
@@ -48,12 +46,12 @@ public class Handler {
 	}
 	
 	public String getWinner(){
-		return winner;
+		return winner;									//Winner wordt geset vanuit de Player-klasse
 	}
 	
 	public int getHighScore() {
 		if(spawn.getScore()>highScore) {
-			highScore = spawn.getScore();
+			highScore = spawn.getScore();				//Haalt highscore op vanuit de Spawn
 		}
 		return highScore;
 	}
@@ -79,15 +77,6 @@ public class Handler {
 	public void removeObject(GameObject object) {
 		this.object.remove(object);
 	}
-	
-	/*public void removeEnemies() {
-		for(GameObject obj : object) {
-			if(obj.getType().equals("Enemy")) {					//RemoveEnemies werkt nog niet aangezien verwijderde enemies toch nog door de thread aangesproken worden (concurrency)
-				object.remove(obj);
-				obj = null;
-			}
-		}
-	}*/
 	
 	public void setGameOver(boolean done) {
 		gameOver = done;

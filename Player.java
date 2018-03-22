@@ -19,30 +19,26 @@ public class Player extends GameObject {
 		this.handler = handler;
 		this.hudX = hudX;
 		health=100;
-		hud = new HUD(hudX);
+		hud = new HUD(hudX);		//Welke kleur, waar moet de HUD,..
 		col = c;
-		
-		//velX =5;
-		//velY =5;
 	}
 
 	
 	public void tick() {
 		x +=velX;
 		y +=velY;
-		// je kan niet buiten de grenzen van het spel
-		x = Game.border(x, 0, Game.WIDTH-37); //als je volgende x positie buiten veld is, dan terug naar vorige x positie
-		y = Game.border(y, 0, Game.HEIGHT-60); // idem x
+														//Player kan niet buiten de grenzen van het spel
+		x = Game.border(x, 0, Game.WIDTH-37); 			//Als de volgende x positie buiten het veld ligt, keert speler terug naar vorige x positie
+		y = Game.border(y, 0, Game.HEIGHT-60); 			//Zelfde voor y
 		collisionCheck();
 		if(health<=0) {
 			health = 0;
 			if(type.equals("Player1")){
 				handler.setWinner("Player 2");
 			}else{
-				handler.setWinner("Player 1");
+				handler.setWinner("Player 1");			//Winnaar verkiezen als een player doodgaat
 			}
 			handler.setGameOver(true);
-			//Game over code nog aanvullen
 		}
 	}
 
@@ -50,7 +46,7 @@ public class Player extends GameObject {
 	public void render(Graphics g) {
 		g.setColor(col);
 		g.fillRect(x, y, 32, 32);
-		updateHud(g);
+		updateHud(g);					//Health doorgeven aan hud
 	}
 	
 	public Rectangle getBounds(){
@@ -68,7 +64,7 @@ public class Player extends GameObject {
 		if(type.equals("Player1")){
 			x=400;y=400;
 		}else{
-			x=960;y=400;
+			x=960;y=400;				//Speler terug op basispositie
 		}
 	}
 	
@@ -83,7 +79,6 @@ public class Player extends GameObject {
 			if(getBounds().intersects(tempObject.getBounds())){
 				switch(tempObject.getType()) {
 						case "Enemy": health-=4;
-							//System.out.println(type + " : Botsing");
 							break;
 						case "HealthBox": 
 							if(health<81) {
@@ -91,25 +86,19 @@ public class Player extends GameObject {
 							}else {
 								health=100;
 							}
-							handler.removeObject(tempObject);
-							break;
+							handler.removeObject(tempObject);		//Vergelijkt de positie van de player met de andere objecten
+							break;									//Bij collision wordt health afgenomen naargelang het soort enemy
 						case "Vertical": health -=5;
-							//System.out.println(type +" : Botsing VerticalEnemy");
 							break;
 						case "Following": health -=2;
-							//System.out.println(type +" : Botsing FollowingEnemy");
 							break;
 						case "Blob":health -=2;
-							//System.out.println(type +" : Botsing Blob");
 							break;
 						case "EnemyLine":health -=4;
-							//System.out.println(type +" : Botsing enemyLine");
 						break;
 						case "EnemyLine1":health -=4;
-							//System.out.println(type +" : Botsing enemyLine");
 						break;
 						case "EnemyLine2":health -=4;
-							//System.out.println(type +" : Botsing enemyLine");
 						break;
 				}
 			}

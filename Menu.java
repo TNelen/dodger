@@ -14,17 +14,16 @@ public class Menu extends MouseAdapter {
 	String letterType = "Tahoma";
 	Font fnt = new Font(letterType,1,50);
 	Font fnt2 = new Font(letterType,1,30);
-	Font fnt3 = new Font(letterType,1,20);
+	Font fnt3 = new Font(letterType,1,20);				//Verschillende standaard fonts
 	Font fnt4 = new Font(letterType,1,15);
 	Font fnt5 = new Font(letterType,1,80);
-	//private HUD hud;
 	
 	ArrayList<ClickButton> buttons;
 	
 	public Menu(Game game, Handler handler) {
 		this.game = game;
 		this.handler = handler;
-		buttons = new ArrayList<ClickButton>();
+		buttons = new ArrayList<ClickButton>();			//Ieder menu heeft een lijst voor buttons
 	}
 	
 	public void mousePressed(MouseEvent e){
@@ -37,7 +36,7 @@ public class Menu extends MouseAdapter {
 	
 	protected boolean mouseOver(int mx, int my, int x, int y, int width, int height) {
 		if(mx>x && mx< x + width){
-			if(my < y && my > y + height) {		//aangepast omdat ik in de war zat, werkt wel
+			if(my < y && my > y + height) {				//Checkt waar de muis op dit moment klikt, en of dat overlapt met een knop
 				return true;
 			}else return false;
 		}else return false;
@@ -49,28 +48,8 @@ public class Menu extends MouseAdapter {
 	public void drawStringCenter(Graphics g, Font f, String s, Color c, int x, int y) {
 		g.setFont(f);
 		g.setColor(c);
-		g.drawString(s, x - (g.getFontMetrics(f).stringWidth(s))/2, y);
+		g.drawString(s, x - (g.getFontMetrics(f).stringWidth(s))/2, y);			//Zet een string gecentreerd in het midden
 	}
-	
-	/*public void drawStringButtonCenter(Graphics g, Font f, String s, Color tc, Color boc, Color buc, int thick, int y) {
-		
-		int sWidth=g.getFontMetrics(f).stringWidth("PLAY");
-		int sHeight=((int) g.getFontMetrics(f).getLineMetrics("PLAY", g).getDescent() + (int) g.getFontMetrics(f).getLineMetrics("PLAY", g).getDescent())*2;
-		
-		
-		Rectangle border = new Rectangle(Game.WIDTH/2-(sWidth/2)-(40+thick),y+(20+thick),sWidth+(40+thick)*2, -sHeight - (20+thick)*2);
-		Rectangle button = new Rectangle(Game.WIDTH/2-(sWidth/2)-40,y+20,sWidth+80, -sHeight - 40);
-		
-		g.setColor(boc);
-		g.fillRect((int) border.getX(), (int) border.getY(), (int) border.getWidth(), (int) border.getHeight());
-		g.setColor(buc);
-		g.fillRect((int) button.getX(), (int) button.getY(), (int) button.getWidth(), (int) button.getHeight());
-		
-		g.setFont(f);
-		g.setColor(tc);
-		g.drawString(s, Game.WIDTH/2 - (g.getFontMetrics(f).stringWidth(s))/2, y);
-		
-	}*/
 	
 	
 	public void render(Graphics g) {

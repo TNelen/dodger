@@ -45,8 +45,8 @@ public class Enemy extends GameObject {
 	public void tick() {
 		x += velX;
 		y += velY;
-		if(y <= 0 || y>= Game.HEIGHT - 32)	velY *= -1;  //keert terug als rand van scherm raakt
-		if(x <= 0 || x>= Game.WIDTH - 16)	velX *= -1;  //keert terug als rand van scherm raakt
+		if(y <= 0 || y>= Game.HEIGHT - 50)	velY *= -1;  //Keert terug als de rand van het scherm geraakt wordt
+		if(x <= 0 || x>= Game.WIDTH - 30)	velX *= -1;  
 	}
 	
 	public void render(Graphics g) { 

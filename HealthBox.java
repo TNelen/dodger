@@ -22,7 +22,7 @@ public class HealthBox extends GameObject {
 
 	public void render(Graphics g) {
 		g.setColor(Color.white);
-		g.fillRect(x,y,32,32);
+		g.fillRect(x,y,32,32);				//Rendert een doosje met een rood kruis op
 		g.setColor(Color.red);
 		g.fillRect(x+13,y,6,32);
 		g.fillRect(x,y+13,32,6);
