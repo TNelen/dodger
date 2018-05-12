@@ -177,7 +177,7 @@ public class Game extends Canvas implements Runnable {
 	
 	public static void main(String args[]) throws Exception{
 		
-		String audioFilePath = "C:\\Users\\jacob\\eclipse-workspace\\SoftwareProject\\ES.wav";
+		String audioFilePath = System.getProperty("user.dir") + "\\resources\\audio\\ES.wav";
 		//String audioFilePath = "C:\\Users\\User\\Desktop\\GameSoundtrack.wav";					//Zet hier het path naar de .wav muziek file
 		AudioPlayer player = new AudioPlayer();	
 		player.setPath(audioFilePath);
